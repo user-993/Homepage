@@ -37,14 +37,14 @@ function showError(error){
 // GET WEATHER FROM API PROVIDER
 function getWeather(latitude, longitude){
     // API key from https://openweathermap.org/
-    const key = "a58ae4602bca7a8d67002f361003bc91";
+    const key = "213bf144a1518d9c6575e714e3c0b156";
     // Const language set as "cz" to show the description and city name in czech language
     const language = "cz";
 
     // The temperature output from openweathermap.org is in degrees of Kelvin, thus I have to deduct 273 to get the temperature in degrees of Celsius
     const KELVIN = 273;
 
-    let api = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}&lang=${language}`;
+    let api = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}&lang=${language}`;
 
     fetch(api)
         .then(function(response){
