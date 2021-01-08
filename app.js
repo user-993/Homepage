@@ -5,14 +5,13 @@ const descElement = document.querySelector(".temperature-description p");
 const locationElement = document.querySelector(".location p");
 const notificationElement = document.querySelector(".notification");
 
-
 const weather = {};
 
 weather.temperature = {
     unit : "celsius"
 }
 
-// CHECK IF BROWSER SUPPORTS GEOLOCATION
+// Check if browser supports geolocation
 if('geolocation' in navigator){
     navigator.geolocation.getCurrentPosition(setPosition, showError);
 }else{
@@ -20,7 +19,7 @@ if('geolocation' in navigator){
     notificationElement.innerHTML = "<p>Browser doesn't Support Geolocation</p>";
 }
 
-// SET USER'S POSITION
+// Set user's position
 function setPosition(position){
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
@@ -28,11 +27,15 @@ function setPosition(position){
     getWeather(latitude, longitude);
 }
 
-// SHOW ERROR WHEN THERE IS AN ISSUE WITH GEOLOCATION SERVICE
+// Showing error when there is an issue with geolocation service
 function showError(error){
     notificationElement.style.display = "block";
     notificationElement.innerHTML = `<p> ${error.message} </p>`;
 }
+
+//------------------------------------------------------------------------------------------------------------------------------//
+
+// WEATHER SECTION
 
 // GET WEATHER FROM API PROVIDER
 function getWeather(latitude, longitude){
@@ -69,8 +72,6 @@ function displayWeather(){
     tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
     descElement.innerHTML = weather.description;
     locationElement.innerHTML = `${weather.city}`;
-
-    //---------------------------------------------------------------------------//
 
     // SHOWING BACKGROUND PICTURES BASED ON THE WEATHER
     var temperature = weather.temperature.value;
@@ -110,7 +111,6 @@ function displayWeather(){
 //------------------------------------------------------------------------------------------------------------------------------//
 
 // TIME SECTION
-
 const time = document.getElementById('time');
 
 // Function for showing the time
@@ -138,11 +138,9 @@ function addZero(n) {
 
 //------------------------------------------------------------------------------------------------------------------------------//
 
-// CHANGING BACKGROUND SECTION
+// GREETING BASED ON CURRENT HOUR
 
-// Set Background and Greeting
 const greeting = document.getElementById('greeting');
-console.log(greeting.textContent);
 
 function greet() {
   let today = new Date(),

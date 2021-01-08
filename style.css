@@ -31,7 +31,7 @@ body {
 	z-index: 2;
 }
 
-/* Notification */
+/* NOTIFICATION */
 .notification {
   display: flex;
   justify-content: center;
@@ -48,7 +48,7 @@ body {
   margin-bottom: 10vh;
 }
 
-/* Icon */
+/* ICON */
 .weather-icon {
   z-index: 5;
   display: flex;
@@ -60,7 +60,7 @@ body {
   text-align: center;
 }
 
-/* Temperature */
+/* TEMPERATURE */
 .temperature-value {
   z-index: 5;
   font-size: 2.5rem;
@@ -72,7 +72,7 @@ body {
   text-align: center;
 }
 
-/* Location */
+/* LOCATION */
 .location {
   font-size: 1.5rem;
   text-align: center;
@@ -81,11 +81,11 @@ body {
 /* TIME SECTION */
 #time-section {
   position: relative;
-  z-index: 5;
   display: flex;
   justify-content: center;
   color: white;
   margin-bottom: 12vh;
+  z-index: 5;
 }
 
 #time {
@@ -96,13 +96,13 @@ body {
 /* GREETING SECTION */
 #greeting-section {
   position: relative;
-  z-index: 5;
   display: flex;
   justify-content: center;
-  color: white;
-  text-align: center;
   align-items: center;
   margin-bottom: 20vh;
+  color: white;
+  text-align: center;
+  z-index: 5;
 } 
 
 #greeting {
